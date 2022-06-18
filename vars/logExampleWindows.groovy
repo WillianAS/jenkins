@@ -15,7 +15,7 @@ def call(body) {
             stage('Body content') {
                 steps {
                     println('Teste')
-                    println(${body})
+                    println(body)
                 }
             }
         }
