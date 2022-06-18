@@ -1,7 +1,6 @@
 #!groovy
 def call(body) {
     println(body)
-
     pipeline {
         agent {
             label 'windows'
@@ -10,6 +9,13 @@ def call(body) {
             stage('Job Test') {
                 steps {
                     powershell 'echo Success!!!'
+                }
+            }
+
+            stage('Body content') {
+                steps {
+                    println('Teste')
+                    println(${body})
                 }
             }
         }
